@@ -12,4 +12,10 @@ public class ImportedProduct : Product
     {
         return Price + CustomsFee;
     }
+
+    public override string priceTag()
+    {
+        string tag = $"{Name} $ {TotalPrice()} (Customs fee: $ {CustomsFee})";
+        return tag;
+    }
 }

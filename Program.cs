@@ -19,7 +19,7 @@ for (int i = 1; i <= productAmount; i++)
         double productPrice = double.Parse(Console.ReadLine());
         Console.Write("Manufacture date (DD/MM/YYYY): ");
         DateTime manufactureDate = DateTime.Parse(Console.ReadLine());
-        
+        list.Add(new UsedProduct(productName, productPrice, manufactureDate));
     } else if (type == 'i')
     {
         Console.Write("Name: ");
@@ -28,6 +28,7 @@ for (int i = 1; i <= productAmount; i++)
         double productPrice = double.Parse(Console.ReadLine());
         Console.Write("Customs fee: ");
         double productFee = Double.Parse(Console.ReadLine());
+        list.Add(new ImportedProduct(productName, productPrice, productFee));
     }
     else
     {
@@ -35,5 +36,11 @@ for (int i = 1; i <= productAmount; i++)
         string productName = Console.ReadLine();
         Console.Write("Price: ");
         double productPrice = double.Parse(Console.ReadLine());
+        list.Add(new Product(productName, productPrice));
+    }
+
+    foreach (var product in list)
+    {
+        Console.WriteLine(product.priceTag());
     }
 }

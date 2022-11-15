@@ -8,4 +8,10 @@ public class UsedProduct : Product
     {
         ManufactureDate = manufactureDate;
     }
+
+    public override string priceTag()
+    {
+        string tag = $"{Name} (used) $ {Price} (Manufacture date: {ManufactureDate}";
+        return tag;
+    }
 }

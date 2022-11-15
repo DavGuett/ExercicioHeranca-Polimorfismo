@@ -10,9 +10,10 @@ public class Product
         Name = name;
         Price = price;
     }
-    public string priceTag()
+    public virtual string priceTag()
     {
-        return Price.ToString();
+        string tag = $"{Name} $ {Price}";
+        return tag;
     }
     
 }
